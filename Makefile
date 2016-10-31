@@ -103,7 +103,7 @@ TARGET_OUT	:= $(addprefix $(BUILD_BASE)/,$(TARGET).out)
 # 			-DICACHE_FLASH \
 # 			-DBUID_TIME=\"$(DATETIME)\"
 
-CFLAGS = -g -save-temps -std=gnu90 -Os -Wpointer-arith -Wundef -Werror \
+CFLAGS = -g -std=gnu90 -Os -Wpointer-arith -Wundef -Werror \
 		 -Wl,-EL -fno-inline-functions -nostdlib -mlongcalls -mtext-section-literals \
 		 -mno-serialize-volatile -D__ets__ -DICACHE_FLASH -DBUID_TIME=\"$(DATETIME)\" 
 
