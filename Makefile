@@ -154,7 +154,7 @@ endif
 OUTPUT := $(addprefix $(FIRMWARE_BASE)/,$(TARGET))
 ESPTOOL_WRITE = write_flash --flash_freq $(ESP_FREQ) --flash_mode $(ESP_MODE) --flash_size $(ESP_SIZE) \
 								0x00000 $(OUTPUT)0x00000.bin \
-								0x10000 $(OUTPUT)0x10000.bin \
+								0x20000 $(OUTPUT)0x20000.bin \
 								$(ESP_INIT_DATA_DEFAULT_ADDR) $(SDK_BASE)/bin/esp_init_data_default.bin
 
 ESPTOOL_FLASHDEF=
