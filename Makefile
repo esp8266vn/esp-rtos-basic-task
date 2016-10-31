@@ -174,13 +174,14 @@ endef
 
 .PHONY: all checkdirs clean
 
-all: touch checkdirs $(OUTPUT)
+# all: touch checkdirs $(OUTPUT)
+all: checkdirs $(OUTPUT)
 
-touch:
-	$(vecho) "-------------------------------------------\n"
-	$(vecho) "BUID TIME $(DATETIME)"
-	$(vecho) "-------------------------------------------\n"
-	$(Q) touch user/user_main.c
+# touch:
+# 	$(vecho) "-------------------------------------------\n"
+# 	$(vecho) "BUID TIME $(DATETIME)"
+# 	$(vecho) "-------------------------------------------\n"
+# 	$(Q) touch user/user_main.c
 
 checkdirs: $(BUILD_DIR) $(FIRMWARE_BASE)
 
