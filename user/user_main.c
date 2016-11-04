@@ -21,11 +21,16 @@ void task_led(void *pvParameters)
 void task_printf(void *pvParameters)
 {
     uint32_t counter = 0;
+    
+    printf("configTICK_RATE_HZ: %u\n", configTICK_RATE_HZ);
+    printf("configMAX_PRIORITIES: %u\n", configMAX_PRIORITIES);
+
     for(;;){
         printf("task_printf, counter = %u\n", counter);
         if (++counter >= 10) break;
         vTaskDelay(500);
     }
+    
     printf("task_printf going to terminate...\n");
     vTaskDelay(100);
     vTaskDelete(NULL);
