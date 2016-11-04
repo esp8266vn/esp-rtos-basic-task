@@ -20,10 +20,15 @@ void task_led(void *pvParameters)
 
 void task_printf(void *pvParameters)
 {
+    uint32_t counter = 0;
     for(;;){
-        printf("task_printf\n");
+        printf("task_printf, counter = %u\n", counter);
+        if (++counter >= 10) break;
         vTaskDelay(500);
     }
+    printf("task_printf going to terminate...\n");
+    vTaskDelay(100);
+    vTaskDelete(NULL);
 }
 
 void user_init(void)
